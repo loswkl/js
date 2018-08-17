@@ -2,12 +2,42 @@
 <html >
 <head>
 <meta charset="UTF-8">
-<title>注册</title>
+<title>精美的CSS3登录注册切换表单页面模板</title>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
 <link rel="stylesheet" href="css/style.css">
 
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+<style type="text/css">
+    *{
+        margin:0;
+        padding:0;
+    }
+    a{
+        text-decoration: none;
+    }
+    img{
+        max-width: 100%;
+        height: auto;
+    }
+    .weixin-tip{
+        display: none;
+        position: fixed;
+        left:0;
+        top:0;
+        bottom:0;
+        background: rgba(0,0,0,0.8);
+        filter:alpha(opacity=80);
+        height: 100%;
+        width: 100%;
+        z-index: 100;
+    }
+    .weixin-tip p{
+        text-align: center;
+        margin-top: 10%;
+        padding:0 5%;
+    }
+</style>
 
 <script type="text/javascript">
     function jump(){
@@ -24,8 +54,33 @@
     /* alert('是否是Android：'+isAndroid);
     alert('是否是iOS：'+isiOS); */
     </script>
+
+    <script type="text/javascript">
+        $(window).on("load",function(){
+            var winHeight = $(window).height();
+            function is_weixin() {
+                var ua = navigator.userAgent.toLowerCase();
+                if (ua.match(/MicroMessenger/i) == "micromessenger") {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            var isWeixin = is_weixin();
+            if(isWeixin){
+                $(".weixin-tip").css("height",winHeight);
+                $(".weixin-tip").show();
+            }
+        })
+    </script>
+
 </head>
 <body >
+  <div class="weixin-tip">
+      <p>
+          <img src="po.jpg" alt="微信打开"/>
+      </p>
+  </div>
 
 <!-- <div class="cotn_principal"> -->
   <div class="cont_centrar">
