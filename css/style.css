@@ -39,7 +39,7 @@ margin-left: -160px;
 position: relative;
   float: left;
   width: 320px;
-  height: 280px;
+  height: 380px;
 overflow: hidden;
   background-color: #fff;
   margin-top: 100px;
@@ -52,7 +52,7 @@ box-shadow: 1px 10px 30px -10px rgba(0,0,0,0.5);
   top:100px;
 left: 0px;
   width: 320px;
-  height: 280px;
+  height: 380px;
   background-color: #eee;
 -webkit-transition: all 0.5s;
 -moz-transition: all 0.5s;
@@ -76,7 +76,7 @@ transition: all 0.5s;
 
 .cont_forms_active_sign_up {
 box-shadow: 1px 10px 30px -10px rgba(0,0,0,0.5);
-  height: 420px;
+  height: 650px;
 top:20px;
 /* left:160px; */
 -webkit-transition: all 0.5s;
@@ -140,12 +140,14 @@ left: -435px;
 -o-transition: all 0.5s;
 transition: all 0.5s;
 }
-
+.img_logo{
+  width: 70%;
+}
 
 .cont_info_log_sign_up {
 position: absolute;
   width: 320px;
-  height: 280px;
+  height: 380px;
   top: 100px;
 z-index: 1;
 }
@@ -153,7 +155,7 @@ z-index: 1;
 .col_md_login {
   position: relative;
   float: left;
-  width: 50%;
+  width: 100%;
 }
 
 .col_md_login > h2 {
@@ -184,7 +186,7 @@ cursor: pointer;
 .col_md_sign_up {
   position: relative;
   float: left;
-  width: 50%;
+  width: 100%;
 }
 
 .cont_ba_opcitiy > h2 {

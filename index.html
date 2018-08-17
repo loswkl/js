@@ -9,6 +9,21 @@
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
 
+<script type="text/javascript">
+    function jump(){
+      var u = navigator.userAgent;
+      var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android
+      var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios
+      if(isAndroid==1){
+        window.location.href="timecapsule://open"
+      }
+      else(
+        window.location.href="ios.jsp"
+      )
+    }
+    /* alert('是否是Android：'+isAndroid);
+    alert('是否是iOS：'+isiOS); */
+    </script>
 </head>
 <body>
 
@@ -25,10 +40,11 @@
         </div> -->
         <div class="col_md_sign_up">
           <div class="cont_ba_opcitiy">
-            <h2>积善时间仓</h2>
-            <p>你收到邀请</p>
+            <img class="img_logo" src="js.png" alt="" style="" />
+            <p>邀请您注册</p><br><br><br><br>
             <button class="btn_sign_up" onClick="cambiar_sign_up()">注　册</button>
-            <button class="btn_sign_up" >已有账号</button>
+            <button class="btn_login" onClick="jump()">已有账号</button>
+
           </div>
         </div>
       </div>
@@ -38,12 +54,16 @@
       <div class="cont_forms" >
         <div class="cont_img_back_"> <img src="po.jpg" alt="" /> </div>
         <div class="cont_form_sign_up"> <a href="#" onClick="ocultar_login_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
-          <h2>SIGN UP</h2>
+          <h2>注册账号</h2>
           <input type="text" placeholder="Email" />
           <input type="text" placeholder="User" />
           <input type="password" placeholder="Password" />
           <input type="password" placeholder="Confirm Password" />
-          <button class="btn_sign_up" onClick="cambiar_sign_up()">SIGN UP</button>
+          <input type="text" placeholder="Email" />
+          <input type="text" placeholder="User" />
+          <input type="password" placeholder="Confirm Password" />
+          <button class="btn_sign_up" onClick="cambiar_sign_up()">注册</button>
+          <button class="btn_login" onClick="ocultar_login_sign_up()">返回</button>
         </div>
       </div>
     </div>
