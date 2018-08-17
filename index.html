@@ -61,8 +61,10 @@
             function is_weixin() {
                 var ua = navigator.userAgent.toLowerCase();
                 if (ua.match(/MicroMessenger/i) == "micromessenger") {
+                  alert("1");
                     return true;
                 } else {
+                  alert("2");
                     return false;
                 }
             }
