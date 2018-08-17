@@ -42,12 +42,12 @@
       var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android
       var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios
       if(isAndroid==1){
-        window.location.href="timecapsule://open"
+        window.location.href="timecapsule://open";
       }
-      else(
-
-        window.location.href="ios.jsp"
-      )
+      else if(isiOS==1){window.location.href="ios.jsp";}
+      else{
+        window.location.href="pc.jsp";
+      }
     }
     /* alert('是否是Android：'+isAndroid);
     alert('是否是iOS：'+isiOS); */
@@ -58,11 +58,11 @@
             alert("1");
 
 
-            return true;
+
         } else {
             alert("2");
-            document.getElementById("weixin-tip").innerHTML="<p><img src="po.png" alt="微信打开" style="max-width: 100%; height: auto;"/></p>";
-            return false;
+
+
         }
     }
 
@@ -73,35 +73,24 @@
 
 </head>
 <body >
-  <div class="weixin-tip" id="weixin-tip">
-  </div>
 
-<!-- <div class="cotn_principal"> -->
+
+
   <div class="cont_centrar">
     <div class="cont_login">
       <div class="cont_info_log_sign_up">
-        <!-- <div class="col_md_login">
-          <div class="cont_ba_opcitiy">
-            <h2>LOGIN</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur.</p>
-            <button class="btn_login" onClick="cambiar_login()">LOGIN</button>
-          </div>
-        </div> -->
+
         <div class="col_md_sign_up">
           <div class="cont_ba_opcitiy">
             <img class="img_logo_fl" src="js.png" alt="" style="" />
             <!-- <p>邀请您注册</p><br><br>--><br><br> <br><br><br><br><br><br><br>
             <button class="btn_sign_up" onClick="cambiar_sign_up()">注　册</button>
-            <button class="btn_login" onClick="is_weixin()">已有账号</button>
+            <button class="btn_login" onClick="jump()">已有账号</button>
 
           </div>
         </div>
       </div>
-      <!-- <div class="cont_back_info">
-        <div class="cont_img_back_grey"> <img src="po.jpg" alt="" /> </div>
-      </div> -->
       <div class="cont_forms" >
-        <!-- <div class="cont_img_back_"> <img src="po.jpg" alt="" /> </div> -->
         <div class="cont_form_sign_up">
           <img class="img_logo" src="js.png" alt="" style="" />
           <input type="text" placeholder="手机号"  />
@@ -114,7 +103,7 @@
       </div>
     </div>
   </div>
-<!-- </div> -->
+
 
 <script src="js/index.js"></script>
 
