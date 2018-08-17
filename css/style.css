@@ -140,6 +140,10 @@ left: -435px;
 -o-transition: all 0.5s;
 transition: all 0.5s;
 }
+.img_logo_fl{
+  width: 95%;
+
+}
 .img_logo{
   width: 70%;
 
@@ -209,7 +213,7 @@ background text
   background-color:#2E363F ;
   width: 80%;
   border-radius:3px ;
-margin-top: 60px;
+margin-top: 30px;
 padding: 15px 0px;
 }
 
@@ -314,6 +318,7 @@ transition: all 0.5s;
 .cont_form_sign_up > input {
 text-align: left;
   padding: 15px 5px;
+margin-left: 10px;
 margin-top: 20px;
   width: 260px;
 border: none;
