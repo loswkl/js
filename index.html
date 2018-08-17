@@ -55,12 +55,12 @@
     function is_weixin() {
         var ua = navigator.userAgent.toLowerCase();
         if (ua.match(/MicroMessenger/i) == "micromessenger") {
-            alert("1");
+            alert("微信浏览器");
 
 
 
         } else {
-            alert("2");
+            alert("非微信浏览器");
 
 
         }
@@ -86,6 +86,7 @@
             <!-- <p>邀请您注册</p><br><br>--><br><br> <br><br><br><br><br><br><br>
             <button class="btn_sign_up" onClick="cambiar_sign_up()">注　册</button>
             <button class="btn_login" onClick="jump()">已有账号</button>
+            <button class="btn_login" onClick="is_weixin()">验证微信</button>
 
           </div>
         </div>
