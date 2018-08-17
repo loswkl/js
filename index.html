@@ -45,39 +45,41 @@
         window.location.href="timecapsule://open"
       }
       else(
+
         window.location.href="ios.jsp"
       )
     }
     /* alert('是否是Android：'+isAndroid);
     alert('是否是iOS：'+isiOS); */
+
+    function is_weixin() {
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            alert("1");
+            return true;
+        } else {
+            alert("2");
+            return false;
+        }
+    }
+    $(window).on("load",function(){
+          var winHeight = $(window).height();
+
+          var isWeixin = is_weixin();
+          if(isWeixin){
+
+          }
+      })
+
     </script>
 
-    <script type="text/javascript">
-        $(window).on("load",function(){
-            var winHeight = $(window).height();
-            function is_weixin() {
-                var ua = navigator.userAgent.toLowerCase();
-                if (ua.match(/MicroMessenger/i) == "micromessenger") {
-                    window.location.href="ios1.jsp"
-                    return true;
-                } else {
-                    window.location.href="ios2.jsp"
-                    return false;
-                }
-            }
-            var isWeixin = is_weixin();
-            if(isWeixin){
-                $(".weixin-tip").css("height",winHeight);
-                $(".weixin-tip").show();
-            }
-        })
-    </script>
+
 
 </head>
 <body >
   <div class="weixin-tip">
       <p>
-          <img src="po.jpg" alt="微信打开"/>
+          <img src="po.png" alt="微信打开"/>
       </p>
   </div>
 
@@ -97,7 +99,7 @@
             <img class="img_logo_fl" src="js.png" alt="" style="" />
             <!-- <p>邀请您注册</p><br><br>--><br><br> <br><br><br><br><br><br><br>
             <button class="btn_sign_up" onClick="cambiar_sign_up()">注　册</button>
-            <button class="btn_login" onClick="jump()">已有账号</button>
+            <button class="btn_login" onClick="is_weixin()">已有账号</button>
 
           </div>
         </div>
