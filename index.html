@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
 <style type="text/css">
-    .weixin-tip{
+    /* .weixin-tip{
         display: none;
         position: fixed;
         left:0;
@@ -20,7 +20,7 @@
         height: 100%;
         width: 100%;
         z-index: 100;
-    }
+    } */
     .weixin-tip p{
         text-align: center;
         margin-top: 10%;
@@ -56,20 +56,16 @@
         var ua = navigator.userAgent.toLowerCase();
         if (ua.match(/MicroMessenger/i) == "micromessenger") {
             alert("1");
+
+
             return true;
         } else {
             alert("2");
+            document.getElementById("weixin-tip").innerHTML="<p><img src="po.png" alt="微信打开" style="max-width: 100%; height: auto;"/></p>";
             return false;
         }
     }
-    $(window).on("load",function(){
-          var winHeight = $(window).height();
 
-          var isWeixin = is_weixin();
-          if(isWeixin){
-
-          }
-      })
 
     </script>
 
@@ -77,10 +73,7 @@
 
 </head>
 <body >
-  <div class="weixin-tip">
-      <p>
-          <img src="po.png" alt="微信打开"/>
-      </p>
+  <div class="weixin-tip" id="weixin-tip">
   </div>
 
 <!-- <div class="cotn_principal"> -->
