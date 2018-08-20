@@ -55,14 +55,14 @@
     window.onload=function is_weixin() {
         var ua = navigator.userAgent.toLowerCase();
         if (ua.match(/MicroMessenger/i) == "micromessenger") {
-            alert("微信浏览器，请使用其他浏览器打开");
+          document.getElementById("weixin-tip").innerHTML="<p><img src=\"po.png\" alt=\"微信打开\"/></p>";
+            //alert("微信浏览器，请使用其他浏览器打开");
 
             return true;
 
         } else {
-           document.getElementById("weixin-tip").innerHTML="<p><img src=\"po.png\" alt=\"微信打开\"/></p>";
-            alert("非微信浏览器");
-            document.getpr
+           
+            //alert("非微信浏览器");
             return false;
 
 
@@ -112,3 +112,4 @@
 
 </body>
 </html>
+
