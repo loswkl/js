@@ -46,15 +46,15 @@ function open_or_download_app() {
         window.setTimeout(function() {
             var timeOutDateTime = new Date();
             if (timeOutDateTime - loadDateTime < 5000) {
-                window.location = "https://itunes.apple.com/cn/app/hu-lu/id627370076?mt=8";
+                window.location = "http://140.143.187.23:8080/TerBlog/";
             } else {
                 window.close();
             }
         },
         25);
-        //window.location = "timecapsule://open";　　// Android端URL Schema
+        window.location = "";　　// ios端URL Schema
     } else if (navigator.userAgent.match(/android/i)) {
-　　　　　　　　　　　　// 判断useragent，当前设备为ios设备
+　　　　　　　　　　　　// 判断useragent，当前设备为安卓设备
 　　　　　　　　　　　　window.location = "timecapsule://open";　　// Android端URL Schema
 　　　　　　　　　 }
 　　　　　　　}
