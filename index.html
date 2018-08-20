@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
 <style type="text/css">
-    /* .weixin-tip{
+    /* #weixin-tip{
         display: none;
         position: fixed;
         left:0;
@@ -21,16 +21,16 @@
         width: 100%;
         z-index: 100;
     } */
-    .weixin-tip p{
+    #weixin-tip p{
         text-align: center;
         margin-top: 10%;
         padding:0 5%;
     }
 
-.weixin-tip a{
+#weixin-tip a{
     text-decoration: none;
 }
-    .weixin-tip img{
+    #weixin-tip img{
         max-width: 100%;
         height: auto;
     }
@@ -52,15 +52,18 @@
     /* alert('是否是Android：'+isAndroid);
     alert('是否是iOS：'+isiOS); */
 
-    function is_weixin() {
+    window.onload=function is_weixin() {
         var ua = navigator.userAgent.toLowerCase();
         if (ua.match(/MicroMessenger/i) == "micromessenger") {
-            alert("微信浏览器");
+            alert("微信浏览器，请使用其他浏览器打开");
 
-
+            return true;
 
         } else {
+           document.getElementById("weixin-tip").innerHTML="<p><img src=\"po.png\" alt=\"微信打开\"/></p>";
             alert("非微信浏览器");
+            document.getpr
+            return false;
 
 
         }
@@ -74,11 +77,10 @@
 </head>
 <body >
 
-
-
-  <div class="cont_centrar">
+  <div class="cont_centrar" id="weixin-tip">
     <div class="cont_login">
       <div class="cont_info_log_sign_up">
+
 
         <div class="col_md_sign_up">
           <div class="cont_ba_opcitiy">
