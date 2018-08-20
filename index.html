@@ -42,13 +42,13 @@ window.onload=function is_weixin() {
     var ua = navigator.userAgent.toLowerCase();
     if (ua.match(/MicroMessenger/i) == "micromessenger") {
       document.getElementById("weixin-tip").innerHTML="<p><img src=\"po.png\" alt=\"微信打开\"/><br><br><img src=\"js.png\" alt=\logo\"/></p>";
-      //alert("微信浏览器，请使用默认浏览器打开");
+      alert("微信浏览器");
       //return true;
 
     } else {
 
         //alert("微信浏览器，请使用其他浏览器打开");
-        //alert("非微信浏览器");
+        alert("非微信浏览器");
         //return false;
 
 
@@ -70,8 +70,19 @@ function open_or_download_app() {
             }
         },
         25);
-        window.location = "http://140.143.187.23:8080/TerBlog/login";　　// ios端URL Schema
+        window.location = "timecapsule://open";　　// ios端URL Schema
     } else if (navigator.userAgent.match(/android/i)) {
+        var loadDateTime = new Date();
+　　　　　   　　　　　　　// 设置时间阈值，在规定时间里面没有打开对应App的话，直接去App store进行下载。
+        window.setTimeout(function() {
+          var timeOutDateTime = new Date();
+          if (timeOutDateTime - loadDateTime < 5000) {
+            window.location.href="http://140.143.187.23:8080/TerBlog/login";
+          } else {
+            window.close();
+          }
+        },
+        25);
 　　　　　　　　　　　　// 判断useragent，当前设备为安卓设备
 　　　　　　　　　　　　window.location = "timecapsule://open";　　// Android端URL Schema
 　　　　　　　　　 }
