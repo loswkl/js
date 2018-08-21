@@ -109,7 +109,7 @@ background text
   border: none;
   width: 110px;
   border-radius: 0px;
-  /* font-height:16px; */
+  font-size: 1;
 
   /* box-shadow: 1px 5px 20px -5px rgba(0, 0, 0, 0.4); */
   color: #fff;
