@@ -16,12 +16,11 @@
     window.onload = function is_weixin() {
       var ua = navigator.userAgent.toLowerCase();
       if (ua.match(/MicroMessenger/i) == "micromessenger") {
-        document.getElementById("weixin-tip").innerHTML = "<p><img src=\"po.png\" alt=\"微信打开\"/><br><br><img src=\"js.png\" alt=\logo\"/></p>";
+        document.getElementById("weixin").innerHTML = "<div id=\"weixin-tip\"><p><img src=\"po.png\" alt=\"微信打开\"/></p></div>";
         //alert("微信浏览器");
         //return true;
 
       } else {
-
         //alert("微信浏览器，请使用其他浏览器打开");
         //alert("非微信浏览器");
         //return false;
@@ -148,21 +147,9 @@
 </head>
 
 <body>
-
-  <div class="cont_centrar" id="weixin-tip">
+  <div id="weixin"></div>
+  <div class="cont_centrar">
     <div class="cont_login">
-      <!-- <div class="cont_info_log_sign_up">
-        <div class="col_md_sign_up">
-          <div class="cont_ba_opcitiy">
-            <img class="img_logo_fl" src="js.png" alt="" style="" />
-            <p>邀请您注册</p><br><br><br><br> <br><br><br><br><br><br><br>
-            <button class="btn_sign_up" onClick="cambiar_sign_up()">注　册</button>
-            <button class="btn_login" onClick="open_or_download_app()">已有账号</button>
-           <button class="btn_login" onClick="is_weixin()">验证微信</button>
-
-          </div>
-        </div>
-      </div> -->
       <form action="" enctype="multipart/form-data" method="post">
         <div class="cont_forms">
           <div class="cont_form_sign_up">
@@ -187,6 +174,9 @@
       </form>
     </div>
   </div>
+
+
+
 </body>
 
 </html>
