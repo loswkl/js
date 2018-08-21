@@ -108,12 +108,11 @@ background text
 .btn_code {
   /* background-color: #778899; */
   border: none;
-  padding: 9px;
   width: 110px;
   border-radius: 0px;
   /* box-shadow: 1px 5px 20px -5px rgba(0, 0, 0, 0.4); */
   color: #fff;
-  margin-top: 10px;
+  margin-top: 9px;
   cursor: pointer;
   padding:  15px;
   border-bottom: 1px solid #dbdbdb;
