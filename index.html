@@ -123,7 +123,7 @@
       var btn_code = document.getElementById("btn_code");
       if (curCount == 0) {
         window.clearInterval(InterValObj); //停止计时器
-          btn_code.innerHTML=("重新发送");
+          btn_code.innerHTML=("<font size=\"1\">"+"重新发送"+"</font>");
           //启用按钮
           btn_code.disabled=false;
       } else {
@@ -216,21 +216,22 @@
       <div class="cont_forms">
         <div class="cont_form_sign_up">
           <img class="img_logo" src="img/js.png" alt="" style="" />
-          <input type="text" id="PhoneNumber" name="PhoneNumber" placeholder="　手机号" onblur="judge1()" />
+          <input type="text" id="PhoneNumber" name="PhoneNumber" placeholder="　手机号" onblur="judge1()" /><hr>
           <div id="PhoneNumberdiv" style="color:red"></div>
           <div class="code">
-            <input type="text" placeholder="　验证码" id="yanzheng" name="yanzheng" onblur="judge2()" /><button class="btn_code" id="btn_code" onClick="btn_code()"><font size="1">获取验证码</font></button>
+            <input type="text" placeholder="　验证码" id="yanzheng" name="yanzheng" onblur="judge2()" /><button class="btn_code" id="btn_code" onClick="btn_code()">获取验证码</button>
             <div id="yanzhengdiv" style="color:red"></div>
           </div>
-          <input type="password" placeholder="　密码" id="password" name="password" onblur="judge3()" />
+          <hr>
+          <input type="password" placeholder="　密码" id="password" name="password" onblur="judge3()" /><hr>
           <div id="passworddiv" style="color:red"></div>
-          <input type="password" placeholder="　确认密码" id="password1" name="password1" onblur="judge4()" />
+          <input type="password" placeholder="　确认密码" id="password1" name="password1" onblur="judge4()" /><hr>
           <div id="passworddiv1" style="color:red"></div>
           <br>
           <button class="btn_sign_up" onClick="judge()">注册</button>
           <br>
           <a onClick="open_or_download_app()">
-            <font size="1">已有账号 请立即登录</font>　</a>
+            <font size="1">已有账号 请立即登录</font></a>
           <!-- <button class="btn_login" onClick="ocultar_login_sign_up()">返回</button> -->
         </div>
       </div>
