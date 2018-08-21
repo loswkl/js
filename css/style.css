@@ -99,7 +99,7 @@ background text
   border-top: 0px;
   border-left: 0px;
   border-right: 0px;
-  text-align: center;
+  text-align: left;
 }
 
 .btn_code {
@@ -134,7 +134,7 @@ background text
   border-top: 0px;
   border-left: 0px;
   border-right: 0px;
-  text-align: center;
+  text-align: left;
 }
 
 .cont_form_sign_up>h2 {
@@ -144,7 +144,7 @@ background text
 }
 
 .cont_form_sign_up>a {
-  color: #7FFFAA;
+  color: #FFFFFF;
   position: relative;
   float: right;
   margin: 10px;
