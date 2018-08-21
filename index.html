@@ -1,105 +1,81 @@
 <!DOCTYPE html>
-<html >
+<html>
+
 <head>
-<meta charset="UTF-8">
-<title>积善时间舱</title>
-<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>积善时间舱</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+  <link rel="stylesheet" href="css/style.css">
 
-<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
-<style type="text/css">
-    /* #weixin-tip{
-        display: none;
-        position: fixed;
-        left:0;
-        top:0;
-        bottom:0;
-        background: rgba(0,0,0,0.8);
-        filter:alpha(opacity=80);
-        height: 100%;
-        width: 100%;
-        z-index: 100;
-    } */
-    #weixin-tip p{
-        text-align: center;
-        margin-top: 10%;
-        padding:0 5%;
-    }
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
 
-#weixin-tip a{
-    text-decoration: none;
-}
-    #weixin-tip img{
-        max-width: 100%;
-        height: auto;
-    }
-</style>
 
-<script type="text/javascript">
-// 判断是否是微信浏览器
-window.onload=function is_weixin() {
-    var ua = navigator.userAgent.toLowerCase();
-    if (ua.match(/MicroMessenger/i) == "micromessenger") {
-      document.getElementById("weixin-tip").innerHTML="<p><img src=\"po.png\" alt=\"微信打开\"/><br><br><img src=\"js.png\" alt=\logo\"/></p>";
-      //alert("微信浏览器");
-      //return true;
+  <script type="text/javascript">
+    // 判断是否是微信浏览器
+    window.onload = function is_weixin() {
+      var ua = navigator.userAgent.toLowerCase();
+      if (ua.match(/MicroMessenger/i) == "micromessenger") {
+        document.getElementById("weixin-tip").innerHTML = "<p><img src=\"po.png\" alt=\"微信打开\"/><br><br><img src=\"js.png\" alt=\logo\"/></p>";
+        //alert("微信浏览器");
+        //return true;
 
-    } else {
+      } else {
 
         //alert("微信浏览器，请使用其他浏览器打开");
         //alert("非微信浏览器");
         //return false;
 
 
+      }
     }
-}
 
 
-function open_or_download_app() {
-    if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
-　　　　　　　　　　　 // 判断useragent，当前设备为ios设备
-        var loadDateTime = new Date();
-　　　　　　　　　　　　// 设置时间阈值，在规定时间里面没有打开对应App的话，直接去App store进行下载。
+    function open_or_download_app() {
+      if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {　　　　　　　　　　　 // 判断useragent，当前设备为ios设备
+        var loadDateTime = new Date();　　　　　　　　　　　　 // 设置时间阈值，在规定时间里面没有打开对应App的话，直接去App store进行下载。
         window.setTimeout(function() {
             var timeOutDateTime = new Date();
             if (timeOutDateTime - loadDateTime < 5000) {
-                window.location.href="http://www.patimecapsule.com/";
+              window.location.href = "https://fir.im/zbvq";
             } else {
-                window.close();
+              window.close();
             }
-        },
-        25);
-        window.location = "timecapsule://open";　　// ios端URL Schema
-    } else if (navigator.userAgent.match(/android/i)) {
-        var loadDateTime = new Date();
-　　　　　   　　　　　　　// 设置时间阈值，在规定时间里面没有打开对应App的话，直接去App store进行下载。
+          },
+          25);
+        window.location = "timecapsule://open";　　 // ios端URL Schema
+      } else if (navigator.userAgent.match(/android/i)) {
+        var loadDateTime = new Date();　　　　　　　　　　　　 // 设置时间阈值，在规定时间里面没有打开对应App的话，直接去App store进行下载。
         window.setTimeout(function() {
-          var timeOutDateTime = new Date();
-          if (timeOutDateTime - loadDateTime < 5000) {
-            window.location.href="http://www.patimecapsule.com/";
-          } else {
-            window.close();
-          }
-        },
-        25);
-　　　　　　　　　　　　// 判断useragent，当前设备为安卓设备
-　　　　　　　　　　　　window.location = "timecapsule://open";　　// Android端URL Schema
-　　　　　　　　　 }
-　　　　　　　}
+            var timeOutDateTime = new Date();
+            if (timeOutDateTime - loadDateTime < 5000) {
+              window.location.href = "https://fir.im/s7av";
+            } else {
+              window.close();
+            }
+          },
+          25);　　　　　　　　　　　　 // 判断useragent，当前设备为安卓设备
+        　　　　　　　　　　　　
+        window.location = "timecapsule://open";　　 // Android端URL Schema
+        　　　　　　　　　
+      } else {
+        window.location.href = "http://www.patimecapsule.com/";
+      }
+
+    }
 
 
 
-    function jump(){
+    function jump() {
       var u = navigator.userAgent;
       var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android
       var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios
-      if(isAndroid==1){
-        window.location.href="timecapsule://open";
-      }
-      else if(isiOS==1){window.location.href="ios.jsp";}
-      else{
-        window.location.href="pc.jsp";
+      if (isAndroid == 1) {
+        window.location.href = "timecapsule://open";
+      } else if (isiOS == 1) {
+        window.location.href = "ios.jsp";
+      } else {
+        window.location.href = "pc.jsp";
       }
     }
     /* alert('是否是Android：'+isAndroid);
@@ -107,47 +83,110 @@ function open_or_download_app() {
 
 
 
+    function judge1() {
+      var PhoneNumber = document.getElementById("PhoneNumber").value;
+      var PhoneNumberdiv = document.getElementById("PhoneNumberdiv");
+      //匹配数字
+      if (PhoneNumber == "") {
+        PhoneNumberdiv.innerHTML = "手机号不能为空";
+        return false;
+      } else {
+        PhoneNumberdiv.innerHTML = "";
+        return true;
+      }
+    }
 
-    </script>
+    function judge2() {
+      var yanzheng = document.getElementById("yanzheng").value;
+      var yanzhengdiv = document.getElementById("yanzhengdiv");
+      //匹配数字
+      if (yanzheng == "") {
+        yanzhengdiv.innerHTML = "验证码不能为空";
+        return false;
+      } else {
+        yanzhengdiv.innerHTML = "";
+        return true;
+      }
+    }
 
+    function judge3() {
+      var password = document.getElementById("password").value;
+      var passworddiv = document.getElementById("passworddiv");
+      //正则（密码由6~20位字母数字组成）
+      var pass = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,20}$/;
+      //匹配数字
+      if (password == "") {
+        passworddiv.innerHTML = "密码不能为空";
+        return false;
+      } else if (!pass.test(password)) {
+        passworddiv.innerHTML = "密码由字母数字组合(6~20位)";
+        return false;
+      } else {
+        passworddiv.innerHTML = "";
+        return true;
+      }
+    }
 
+    function judge4() {
+      var password = document.getElementById("password").value;
+      var password1 = document.getElementById("password1").value;
+      var passworddiv1 = document.getElementById("passworddiv1");
+      //匹配数字
+      if (password1 == "") {
+        passworddiv1.innerHTML = "密码不能为空";
+        return false;
+      } else if (password != password1) {
+        passworddiv1.innerHTML = "两次输入密码不一致  请重新输入";
+        return false;
+      } else {
+        passworddiv1.innerHTML = "";
+        return true;
+      }
+    }
+  </script>
 
 </head>
-<body >
+
+<body>
 
   <div class="cont_centrar" id="weixin-tip">
     <div class="cont_login">
-      <div class="cont_info_log_sign_up">
-
-
+      <!-- <div class="cont_info_log_sign_up">
         <div class="col_md_sign_up">
           <div class="cont_ba_opcitiy">
             <img class="img_logo_fl" src="js.png" alt="" style="" />
-            <!-- <p>邀请您注册</p><br><br>--><br><br> <br><br><br><br><br><br><br>
+            <p>邀请您注册</p><br><br><br><br> <br><br><br><br><br><br><br>
             <button class="btn_sign_up" onClick="cambiar_sign_up()">注　册</button>
             <button class="btn_login" onClick="open_or_download_app()">已有账号</button>
-            <!-- <button class="btn_login" onClick="is_weixin()">验证微信</button> -->
+           <button class="btn_login" onClick="is_weixin()">验证微信</button>
 
           </div>
         </div>
-      </div>
-      <div class="cont_forms" >
-        <div class="cont_form_sign_up">
-          <img class="img_logo" src="js.png" alt="" style="" />
-          <input type="text" placeholder="手机号"  />
-          <input type="text" placeholder="密码"  />
-          <input type="password" placeholder="确认密码" />
-          <div class="code"><input type="password" placeholder="验证码" /><button class="btn_code" onClick="ocultar_login_sign_up()">获取验证码</button></div>
-          <br><br><br><br><br><br>
-          <button class="btn_sign_up" onClick="cambiar_sign_up()">注册</button>
-          <button class="btn_login" onClick="ocultar_login_sign_up()">返回</button>
+      </div> -->
+      <form action="" enctype="multipart/form-data" method="post">
+        <div class="cont_forms">
+          <div class="cont_form_sign_up">
+            <img class="img_logo" src="js.png" alt="" style="" />
+            <input type="text" id="PhoneNumber" name="PhoneNumber" placeholder="手机号" onblur="judge1()" />
+            <div id="PhoneNumberdiv" style="color:red"></div>
+            <div class="code">
+              <input type="text" placeholder="验证码" id="yanzheng" name="yanzheng" onblur="judge2()" /><button class="btn_code" onClick="">获取验证码</button>
+              <div id="yanzhengdiv" style="color:red"></div>
+            </div>
+            <input type="password" placeholder="密码" id="password" name="password" onblur="judge3()" />
+            <div id="passworddiv" style="color:red"></div>
+            <input type="password" placeholder="确认密码" id="password1" name="password1" onblur="judge4()" />
+            <div id="passworddiv1" style="color:red"></div>
+            <br>
+            <a onClick="open_or_download_app()">已有账号 请立即登录　</a>
+            <br><br><br>
+            <button class="btn_sign_up" type="submit">注册</button>
+            <!-- <button class="btn_login" onClick="ocultar_login_sign_up()">返回</button> -->
+          </div>
         </div>
-      </div>
+      </form>
     </div>
   </div>
-
-
-<script src="js/index.js"></script>
-
 </body>
+
 </html>
