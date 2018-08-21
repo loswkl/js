@@ -105,15 +105,15 @@
     alert('是否是iOS：'+isiOS); */
     var InterValObj; //timer变量，控制时间
     var count = 60; //间隔函数，1秒执行
-    var curCount;//当前剩余秒数
+    var curCount; //当前剩余秒数
 
 
     function btn_code() {
       curCount = count;
       var btn_code = document.getElementById("btn_code");
       //禁用按钮
-      btn_code.disabled=true;
-      btn_code.innerHTML=(curCount + "\'");
+      btn_code.disabled = true;
+      btn_code.innerHTML = (curCount + "\'");
       InterValObj = window.setInterval(SetRemainTime, 1000);
     }
 
@@ -123,12 +123,12 @@
       var btn_code = document.getElementById("btn_code");
       if (curCount == 0) {
         window.clearInterval(InterValObj); //停止计时器
-          btn_code.innerHTML=("<font size=\"1\">"+"重新发送"+"</font>");
-          //启用按钮
-          btn_code.disabled=false;
+        btn_code.innerHTML = ("<font size=\"1\">" + "重新发送" + "</font>");
+        //启用按钮
+        btn_code.disabled = false;
       } else {
         curCount--;
-        btn_code.innerHTML=(curCount + "\'");
+        btn_code.innerHTML = (curCount + "\'");
       }
     }
 
@@ -148,9 +148,13 @@
     function judge1() {
       var PhoneNumber = document.getElementById("PhoneNumber").value;
       var PhoneNumberdiv = document.getElementById("PhoneNumberdiv");
+      var mobile = /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/;
       //匹配数字
       if (PhoneNumber == "") {
         PhoneNumberdiv.innerHTML = "手机号不能为空";
+        return false;
+      } else if (!mobile.test(PhoneNumber)) {
+        PhoneNumberdiv.innerHTML = "请输入正确手机号格式";
         return false;
       } else {
         PhoneNumberdiv.innerHTML = "";
@@ -216,11 +220,11 @@
       <div class="cont_forms">
         <div class="cont_form_sign_up">
           <img class="img_logo" src="img/js.png" alt="" style="" />
-          <input type="text" id="PhoneNumber" name="PhoneNumber" placeholder="　手机号" onblur="judge1()" />
+          <input type="number" id="PhoneNumber" name="PhoneNumber" placeholder="　手机号" onblur="judge1()" />
           <hr>
           <div id="PhoneNumberdiv" style="color:red"></div>
           <div class="code">
-            <input type="text" placeholder="　验证码" id="yanzheng" name="yanzheng" onblur="judge2()" /><button class="btn_code" id="btn_code" onClick="btn_code()">获取验证码</button>
+            <input type="number" placeholder="　验证码" id="yanzheng" name="yanzheng" onblur="judge2()" /><button class="btn_code" id="btn_code" onClick="btn_code()">获取验证码</button>
           </div>
           <hr>
           <div id="yanzhengdiv" style="color:red"></div>
@@ -234,7 +238,8 @@
           <button class="btn_sign_up" onClick="judge()">注册</button>
           <br>
           <a onClick="open_or_download_app()">
-            <font size="1">已有账号 请立即登录</font></a>
+            <font size="1">已有账号 请立即登录</font>
+          </a>
           <!-- <button class="btn_login" onClick="ocultar_login_sign_up()">返回</button> -->
         </div>
       </div>
