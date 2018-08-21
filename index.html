@@ -16,7 +16,15 @@
     window.onload = function is_weixin() {
       var ua = navigator.userAgent.toLowerCase();
       if (ua.match(/MicroMessenger/i) == "micromessenger") {
-        document.getElementById("weixin").innerHTML = "<div id=\"weixin-tip\"><p><img src=\"po.png\" alt=\"微信打开\"/></p></div>";
+
+        if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
+          document.getElementById("weixin").innerHTML = "<div id=\"weixin-tip\"><p><img src=\"Ios.png\" alt=\"微信打开\"/></p></div>";
+        } else if (navigator.userAgent.match(/android/i)) {
+          document.getElementById("weixin").innerHTML = "<div id=\"weixin-tip\"><p><img src=\"Android.png\" alt=\"微信打开\"/></p></div>";
+        } else {
+          document.getElementById("weixin").innerHTML = "<div id=\"weixin-tip\"><p><img src=\"Android.png\" alt=\"微信打开\"/></p></div>";
+        }
+
         //alert("微信浏览器");
         //return true;
 
