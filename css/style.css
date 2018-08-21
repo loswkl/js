@@ -40,7 +40,7 @@
   position: absolute;
   overflow: hidden;
   height: 650px;
-  top: 20px;
+  top: 60px;
   left: 0px;
   width: 320px;
   background-color: #2E363F;
@@ -68,15 +68,16 @@ background text
  */
 
 .btn_sign_up {
-  background-color: #f44336;
+  background-color: #BA9257;
   border: none;
   padding: 10px;
-  width: 200px;
+  width: 270px;
   border-radius: 3px;
   box-shadow: 1px 5px 20px -5px rgba(0, 0, 0, 0.4);
   color: #fff;
   margin-top: 10px;
   cursor: pointer;
+  margin-left: 12.5px;
 
 }
 
@@ -108,7 +109,7 @@ background text
   border: none;
   padding: 10px;
   width: 110px;
-  /*border-radius: 3px; */
+  /* border-radius: 3px; */
   /* box-shadow: 1px 5px 20px -5px rgba(0, 0, 0, 0.4); */
   color: #fff;
   margin-top: 10px;
