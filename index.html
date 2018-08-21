@@ -103,11 +103,35 @@
     }
     /* alert('是否是Android：'+isAndroid);
     alert('是否是iOS：'+isiOS); */
+    var InterValObj; //timer变量，控制时间
+    var count = 60; //间隔函数，1秒执行
+    var curCount;//当前剩余秒数
 
 
-    function code() {
-      alert("接收验证码，请在60秒内输入");
+    function btn_code() {
+      curCount = count;
+      var btn_code = document.getElementById("btn_code");
+      //禁用按钮
+      btn_code.disabled=true;
+      btn_code.innerHTML=(curCount + "\'");
+      InterValObj = window.setInterval(SetRemainTime, 1000);
     }
+
+
+    //timer处理函数
+    function SetRemainTime() {
+      var btn_code = document.getElementById("btn_code");
+      if (curCount == 0) {
+        window.clearInterval(InterValObj); //停止计时器
+          btn_code.innerHTML=("重新发送");
+          //启用按钮
+          btn_code.disabled=false;
+      } else {
+        curCount--;
+        btn_code.innerHTML=(curCount + "\'");
+      }
+    }
+
 
     function judge() {
       if (judge1() != true) {
@@ -195,7 +219,7 @@
           <input type="text" id="PhoneNumber" name="PhoneNumber" placeholder="　手机号" onblur="judge1()" />
           <div id="PhoneNumberdiv" style="color:red"></div>
           <div class="code">
-            <input type="text" placeholder="　验证码" id="yanzheng" name="yanzheng" onblur="judge2()" /><button class="btn_code" onClick="code()">获取验证码</button>
+            <input type="text" placeholder="　验证码" id="yanzheng" name="yanzheng" onblur="judge2()" /><button class="btn_code" id="btn_code" onClick="btn_code()">获取验证码</button>
             <div id="yanzhengdiv" style="color:red"></div>
           </div>
           <input type="password" placeholder="　密码" id="password" name="password" onblur="judge3()" />
