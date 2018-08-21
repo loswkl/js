@@ -38,8 +38,8 @@
 
 .cont_forms {
   position: absolute;
-  overflow: hidden;
-  height: 650px;
+  /* overflow: hidden; */
+  /* height: 650px; */
   top: 60px;
   left: 0px;
   width: 320px;
