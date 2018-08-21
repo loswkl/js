@@ -44,7 +44,14 @@
         window.setTimeout(function() {
             var timeOutDateTime = new Date();
             if (timeOutDateTime - loadDateTime < 5000) {
-              window.location.href = "https://fir.im/zbvq";
+              var r = confirm("即将跳转到下载页面！");
+              if (r == true) {
+                //点击确定
+                window.location.href = "https://fir.im/zbvq";
+              } else {
+                //点击取消
+              }
+
             } else {
               window.close();
             }
@@ -56,7 +63,14 @@
         window.setTimeout(function() {
             var timeOutDateTime = new Date();
             if (timeOutDateTime - loadDateTime < 5000) {
-              window.location.href = "https://fir.im/s7av";
+              var r = confirm("即将跳转到下载页面！");
+              if (r == true) {
+                //点击确定
+                window.location.href = "https://fir.im/s7av";
+              } else {
+                //点击取消
+              }
+
             } else {
               window.close();
             }
@@ -66,7 +80,8 @@
         window.location = "timecapsule://open";　　 // Android端URL Schema
         　　　　　　　　　
       } else {
-        document.getElementById("weixin").innerHTML = "<div id=\"weixin-tip\"><p>请使用手机下载App登陆<br><br><img src=\"img/DIos.png\"><br><a href=\"https://fir.im/zbvq\">Ios</a><br><br><img src=\"img/Dandroid.png\"><br><a href=\"https://fir.im/s7av\">Android</a></p></div>";
+        document.getElementById("weixin").innerHTML =
+          "<div id=\"weixin-tip\"><p>请使用手机下载App登陆<br><br><img src=\"img/DIos.png\"><br><a href=\"https://fir.im/zbvq\">Ios</a><br><br><img src=\"img/Dandroid.png\"><br><a href=\"https://fir.im/s7av\">Android</a></p></div>";
         //window.location.href = "http://www.patimecapsule.com/";
       }
 
@@ -90,6 +105,21 @@
     alert('是否是iOS：'+isiOS); */
 
 
+    function code() {
+      alert("接收验证码，请在60秒内输入");
+    }
+
+    function judge() {
+      if (judge1() != true) {
+        alert("手机号输入错误");
+      } else if (judge2() != true) {
+        alert("验证码输入错误");
+      } else if (judge3() != true) {
+        alert("密码输入错误");
+      } else if (judge4() != true) {
+        alert("确认密码输入错误");
+      }
+    }
 
     function judge1() {
       var PhoneNumber = document.getElementById("PhoneNumber").value;
@@ -159,28 +189,28 @@
   <div id="weixin"></div>
   <div class="cont_centrar">
     <div class="cont_login">
-      <form action="" enctype="multipart/form-data" method="post">
-        <div class="cont_forms">
-          <div class="cont_form_sign_up">
-            <img class="img_logo" src="img/js.png" alt="" style="" />
-            <input type="text" id="PhoneNumber" name="PhoneNumber" placeholder="手机号" onblur="judge1()" />
-            <div id="PhoneNumberdiv" style="color:red"></div>
-            <div class="code">
-              <input type="text" placeholder="验证码" id="yanzheng" name="yanzheng" onblur="judge2()" /><button class="btn_code" onClick="">获取验证码</button>
-              <div id="yanzhengdiv" style="color:red"></div>
-            </div>
-            <input type="password" placeholder="密码" id="password" name="password" onblur="judge3()" />
-            <div id="passworddiv" style="color:red"></div>
-            <input type="password" placeholder="确认密码" id="password1" name="password1" onblur="judge4()" />
-            <div id="passworddiv1" style="color:red"></div>
-            <br>
-            <a onClick="open_or_download_app()">已有账号 请立即登录　</a>
-            <br><br><br>
-            <button class="btn_sign_up" type="submit">注册</button>
-            <!-- <button class="btn_login" onClick="ocultar_login_sign_up()">返回</button> -->
+      <div class="cont_forms">
+        <div class="cont_form_sign_up">
+          <img class="img_logo" src="img/js.png" alt="" style="" />
+          <input type="text" id="PhoneNumber" name="PhoneNumber" placeholder="　手机号" onblur="judge1()" />
+          <div id="PhoneNumberdiv" style="color:red"></div>
+          <div class="code">
+            <input type="text" placeholder="　验证码" id="yanzheng" name="yanzheng" onblur="judge2()" /><button class="btn_code" onClick="">获取验证码</button>
+            <div id="yanzhengdiv" style="color:red"></div>
           </div>
+          <input type="password" placeholder="　密码" id="password" name="password" onblur="judge3()" />
+          <div id="passworddiv" style="color:red"></div>
+          <input type="password" placeholder="　确认密码" id="password1" name="password1" onblur="judge4()" />
+          <div id="passworddiv1" style="color:red"></div>
+          <br>
+          <button class="btn_sign_up" onClick="judge()">注册</button>
+          <br>
+          <a onClick="open_or_download_app()">
+            <font size="1">已有账号 请立即登录</font>　</a>
+          <!-- <button class="btn_login" onClick="ocultar_login_sign_up()">返回</button> -->
         </div>
-      </form>
+      </div>
+
     </div>
   </div>
 
