@@ -15,14 +15,15 @@
     // 判断是否是微信浏览器
     window.onload = function is_weixin() {
       var ua = navigator.userAgent.toLowerCase();
+      var weixin = document.getElementById("weixin");
       if (ua.match(/MicroMessenger/i) == "micromessenger") {
 
         if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
-          document.getElementById("weixin").innerHTML = "<div id=\"weixin-tip\"><p><img src=\"img/Ios.png\" alt=\"微信打开\"/></p></div>";
+          weixin.innerHTML = "<div id=\"weixin-tip\"><p><img src=\"img/Ios.png\" alt=\"微信打开\"/></p></div>";
         } else if (navigator.userAgent.match(/android/i)) {
-          document.getElementById("weixin").innerHTML = "<div id=\"weixin-tip\"><p><img src=\"img/Android.png\" alt=\"微信打开\"/></p></div>";
+          weixin.innerHTML = "<div id=\"weixin-tip\"><p><img src=\"img/Android.png\" alt=\"微信打开\"/></p></div>";
         } else {
-          document.getElementById("weixin").innerHTML = "<div id=\"weixin-tip\"><p><img src=\"img/Android.png\" alt=\"微信打开\"/></p></div>";
+          weixin.innerHTML = "<div id=\"weixin-tip\"><p><img src=\"img/Android.png\" alt=\"微信打开\"/></p></div>";
         }
 
         //alert("微信浏览器");
@@ -137,6 +138,14 @@
       }
     }
 
+    function hint_time(){
+
+      var hint = document.getElementById("hint");
+      hint.innerHTML = "<div class=\"hint\">手机号不能为空</div>";
+      setTimeout(function(){  //使用  setTimeout（）方法设定定时2000毫秒
+      hint.innerHTML = "";
+    },1500);
+    }
 
     function judge() {
       if (judge1() != true) {
@@ -152,11 +161,12 @@
 
     function judge1() {
       var PhoneNumber = document.getElementById("PhoneNumber").value;
+      var ts = document.getElementById("ts");
       var PhoneNumberdiv = document.getElementById("PhoneNumberdiv");
       var mobile = /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/;
       //匹配数字
       if (PhoneNumber == "") {
-        PhoneNumberdiv.innerHTML = "手机号不能为空";
+        hint_time();
         return false;
       } else if (!mobile.test(PhoneNumber)) {
         PhoneNumberdiv.innerHTML = "请输入正确手机号格式";
@@ -169,6 +179,7 @@
 
     function judge2() {
       var yanzheng = document.getElementById("yanzheng").value;
+      var ts = document.getElementById("ts").value;
       var yanzhengdiv = document.getElementById("yanzhengdiv");
       //匹配数字
       if (yanzheng == "") {
@@ -220,9 +231,10 @@
 
 <body>
   <div id="weixin"></div>
+
   <div class="cont_centrar">
     <div class="cont_login">
-      <div class="cont_forms">
+      <div class="cont_forms"><div  id="hint" style="color:#ffffff" ></div>
         <div class="cont_form_sign_up">
           <img class="img_logo" src="img/js.png" alt="" style="" />
           <input type="text" id="PhoneNumber" name="PhoneNumber" placeholder="　手机号" onblur="judge1()" />
