@@ -169,7 +169,7 @@ background text
   filter: alpha(opacity=80);
   /* background-color:#BA9257; */
   z-index: 100;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(119,136,153, 0.1);
   filter: alpha(opacity=80);
 }
 
