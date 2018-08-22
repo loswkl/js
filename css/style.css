@@ -176,12 +176,12 @@ background text
 
 }
 
-.hint > span{
-  background: linear-gradient(to right, yellow, pink,red);
-        -webkit-background-clip: text;
-        color: transparent;
-
+.hint > font{
+  font-size: 0.5em;
+  background: transparent;
 }
+
+
 
 /* #hint{
   text-align: center;
