@@ -63,7 +63,7 @@
         var loadDateTime = new Date();　　　　　　　　　　　　 // 设置时间阈值，在规定时间里面没有打开对应App的话，直接去App store进行下载。
         window.setTimeout(function() {
             var timeOutDateTime = new Date();
-            if (timeOutDateTime - loadDateTime < 1200) {
+            if (timeOutDateTime - loadDateTime < 5000) {
               var r = confirm("即将跳转到下载页面！");
               if (r == true) {
                 //点击确定
