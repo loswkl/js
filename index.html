@@ -113,7 +113,7 @@
       curCount = count;
       var btn_code = document.getElementById("btn_code");
       if (judge1() != true) {
-        alert("请检查您的手机号");
+      //  hint_time("手机号不能为空");
         return false;
       }
       //禁用按钮
@@ -138,10 +138,10 @@
       }
     }
 
-    function hint_time(){
+    function hint_time(hintinfo){
 
       var hint = document.getElementById("hint");
-      hint.innerHTML = "<div class=\"hint\">手机号不能为空</div>";
+      hint.innerHTML = "<div class=\"hint\" ><font>"+hintinfo+"</font></div>";
       setTimeout(function(){  //使用  setTimeout（）方法设定定时2000毫秒
       hint.innerHTML = "";
     },1500);
@@ -149,44 +149,42 @@
 
     function judge() {
       if (judge1() != true) {
-        alert("请检查您的手机号");
+
       } else if (judge2() != true) {
-        alert("请检查您的验证码");
+
       } else if (judge3() != true) {
-        alert("请检查您的密码");
+
       } else if (judge4() != true) {
-        alert("请检查您的确认密码");
+
       }
     }
 
     function judge1() {
       var PhoneNumber = document.getElementById("PhoneNumber").value;
-      var ts = document.getElementById("ts");
       var PhoneNumberdiv = document.getElementById("PhoneNumberdiv");
       var mobile = /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/;
       //匹配数字
       if (PhoneNumber == "") {
-        hint_time();
+        hint_time("手机号不能为空");
         return false;
       } else if (!mobile.test(PhoneNumber)) {
-        PhoneNumberdiv.innerHTML = "请输入正确手机号格式";
+        hint_time("请输入正确手机号格式");
         return false;
       } else {
-        PhoneNumberdiv.innerHTML = "";
+        //PhoneNumberdiv.innerHTML = "";
         return true;
       }
     }
 
     function judge2() {
       var yanzheng = document.getElementById("yanzheng").value;
-      var ts = document.getElementById("ts").value;
       var yanzhengdiv = document.getElementById("yanzhengdiv");
       //匹配数字
       if (yanzheng == "") {
-        yanzhengdiv.innerHTML = "验证码不能为空";
+        hint_time("验证码不能为空");
         return false;
       } else {
-        yanzhengdiv.innerHTML = "";
+        //yanzhengdiv.innerHTML = "";
         return true;
       }
     }
@@ -198,13 +196,13 @@
       var pass = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,20}$/;
       //匹配数字
       if (password == "") {
-        passworddiv.innerHTML = "密码不能为空";
+        hint_time("密码不能为空");
         return false;
       } else if (!pass.test(password)) {
-        passworddiv.innerHTML = "密码由字母数字组合(6~20位)";
+        hint_time("密码由字母数字组合(6~20位)");
         return false;
       } else {
-        passworddiv.innerHTML = "";
+      //  passworddiv.innerHTML = "";
         return true;
       }
     }
@@ -215,13 +213,13 @@
       var passworddiv1 = document.getElementById("passworddiv1");
       //匹配数字
       if (password1 == "") {
-        passworddiv1.innerHTML = "密码不能为空";
+        hint_time("密码不能为空");
         return false;
       } else if (password != password1) {
-        passworddiv1.innerHTML = "两次输入密码不一致  请重新输入";
+        hint_time("两次输入密码不一致  请重新输入");
         return false;
       } else {
-        passworddiv1.innerHTML = "";
+      //  passworddiv1.innerHTML = "";
         return true;
       }
     }
@@ -234,7 +232,7 @@
 
   <div class="cont_centrar">
     <div class="cont_login">
-      <div class="cont_forms"><div  id="hint" style="color:#ffffff" ></div>
+      <div class="cont_forms"><div  id="hint" style="color:#ffffff"  ></div>
         <div class="cont_form_sign_up">
           <img class="img_logo" src="img/js.png" alt="" style="" />
           <input type="text" id="PhoneNumber" name="PhoneNumber" placeholder="　手机号" onblur="judge1()" />
