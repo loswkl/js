@@ -1,269 +1,617 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="UTF-8">
-  <title>积善时间舱</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
 
 
-  <script type="text/javascript">
-    // 判断是否是微信浏览器
-    window.onload = function is_weixin() {
-      var ua = navigator.userAgent.toLowerCase();
-      var weixin = document.getElementById("weixin");
-      if (ua.match(/MicroMessenger/i) == "micromessenger") {
+	<!DOCTYPE html>
+	<html>
 
-        if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
-          weixin.innerHTML = "<div id=\"weixin-tip\"><p><img src=\"img/Ios.png\" alt=\"微信打开\"/></p></div>";
-        } else if (navigator.userAgent.match(/android/i)) {
-          weixin.innerHTML = "<div id=\"weixin-tip\"><p><img src=\"img/Android.png\" alt=\"微信打开\"/></p></div>";
-        } else {
-          weixin.innerHTML = "<div id=\"weixin-tip\"><p><img src=\"img/Android.png\" alt=\"微信打开\"/></p></div>";
-        }
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>积善时间舱</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+        <meta name="applicable-device" content="mobile" />
+		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+		<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
 
-        //alert("微信浏览器");
-        //return true;
+		<style type="text/css">
+			* {
+				margin: 0px auto;
+				padding: 0px;
+				text-align: center;
+				background-color: #2E363F;
+				font-family: 'Lato', sans-serif;
+			}
 
-      } else {
-        //alert("微信浏览器，请使用其他浏览器打开");
-        //alert("非微信浏览器");
-        //return false;
+			.cotn_principal {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cfd8dc+0,607d8b+100,b0bec5+100 */
+				background: #2E363F;
+				/* Old browsers */
+				background: #2E363F;
+				/* FF3.6-15 */
+				background: #2E363F;
+				/* Chrome10-25,Safari5.1-6 */
+				background: #2E363F;
+				/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfd8dc',
+				endColorstr='#b0bec5', GradientType=1);
+				/* IE6-9 fallback on horizontal gradient */
+			}
+
+			.cont_centrar {
+				/* position: relative; */
+				float: left;
+				width: 100%;
+			}
+
+			.cont_login {
+				position: relative;
+				width: 320px;
+				left: 50%;
+				margin-left: -130px;
+			}
+
+			.cont_forms {
+				position: absolute;
+				/* overflow: hidden; */
+				/* height: 650px; */
+				top: 60px;
+				left: 0px;
+				width: 260px;
+				background-color: #2E363F;
+			}
+
+			.img_logo {
+				width: 70%;
+			}
+
+			.btn_login {
+				background-color: #FF9800;
+				border: none;
+				padding: 10px;
+				width: 200px;
+				border-radius: 0px;
+				box-shadow: 1px 5px 20px -5px rgba(0, 0, 0, 0.4);
+				color: #fff;
+				margin-top: 10px;
+				cursor: pointer;
+			}
+
+			/* ----------------------------------
+background text
+------------------------------------
+ */
+
+			.btn_sign_up {
+				background-color: #BA9257;
+				border: none;
+				padding: 10px;
+				width: 260px;
+				border-radius: 0px;
+				box-shadow: 1px 5px 20px -5px rgba(0, 0, 0, 0.4);
+				color: #fff;
+				margin-top: 10px;
+				cursor: pointer;
+			}
+
+			.code {
+				/* position: absolute; */
+				width: 260px;
+				/* float: left; */
+				/* opacity: 0; */
+				/* display: none; */
+			}
+
+			.code>input {
+				text-align: left;
+				padding: 15px 5px;
+				margin-top: 20px;
+				width: 140px;
+				border: none;
+				color: #dbdbdb;
+				/* border-bottom: 1px solid #dbdbdb; */
+				border-top: 0px;
+				border-left: 0px;
+				border-right: 0px;
+				border-radius: 0px;
+				left: 0px;
+			}
+
+			.code>a {
+				text-align: center;
+				padding-bottom: 15px;
+				margin-top: 20px;
+				margin-left: 10px;
+				width: 100px;
+				border: none;
+				color: #dbdbdb;
+				/* border-bottom: 1px solid #dbdbdb; */
+				border-top: 0px;
+				border-left: 0px;
+				border-right: 0px;
+				border-radius: 0px;
+				padding-left: 0px;
+				display: inline-block;
+				font-size: 0.7em;
+			}
+
+			.btn_code {
+				/* background-color: #778899; */
+				border: none;
+				width: 110px;
+				border-radius: 0px;
+				/* box-shadow: 1px 5px 20px -5px rgba(0, 0, 0, 0.4); */
+				color: #fff;
+				margin-top: 10px;
+				cursor: pointer;
+				padding-bottom: 15px;
+				/* border-bottom: 1px solid #dbdbdb; */
+				border-top: 0px;
+				border-left: 0px;
+				border-right: 0px;
+				border-radius: 0px;
+			}
+
+			.cont_form_sign_up {
+				position: absolute;
+				width: 260px;
+				float: left;
+				opacity: 1;
+				display: block;
+			}
+
+			.cont_form_sign_up>input {
+				text-align: left;
+				padding: 15px 5px;
+				/* margin-left: 10px; */
+				margin-top: 20px;
+				width: 250px;
+				border: none;
+				color: #dbdbdb;
+				/* border-bottom: 1px solid #dbdbdb; */
+				border-top: 0px;
+				border-left: 0px;
+				border-right: 0px;
+				text-align: left;
+				border-radius: 0px;
+			}
+
+			.cont_form_sign_up>h2 {
+				margin-top: 50px;
+				font-weight: 400;
+				color: #757575;
+			}
+
+			.cont_form_sign_up>a {
+				color: #FFFFFF;
+				position: relative;
+				float: right;
+				margin: 10px;
+				margin-left: 30px;
+			}
+
+			.hint {
+				/* border: 1px solid #BA9257; */
+				height: 25px;
+				border-radius: 8px;
+				position: fixed;
+				bottom: 50px;
+				/* top: 20px; */
+				width: 200px;
+				margin-right: 30px;
+				margin-left: 30px;
+				filter: alpha(opacity=80);
+				/* background-color:#BA9257; */
+				z-index: 100;
+				background: rgba(119, 136, 153, 0.1);
+				filter: alpha(opacity=80);
+			}
+
+			.hint>font {
+				font-size: 0.7em;
+				background: transparent;
+			}
+
+			/* #hint{
+  text-align: center;
+} */
+
+			#weixin-tip {
+				position: fixed;
+				left: 0;
+				top: 0;
+				background: rgba(0, 0, 0, 0.8);
+				filter: alpha(opacity=80);
+				width: 100%;
+				height: 100%;
+				z-index: 100;
+			}
+
+			#weixin-tip p {
+				text-align: center;
+				margin-top: 10%;
+				padding: 0 5%;
+				color: #FFFFFF;
+				background: transparent;
+			}
+
+			#weixin-tip a {
+				text-decoration: none;
+				color: #FFFFFF;
+				background: transparent;
+			}
+
+			#weixin-tip img {
+				max-width: 100%;
+				height: auto;
+				background: transparent;
+			}
+		</style>
+		<script src="js/jquery.min.js"></script>
+
+		<script type="text/javascript">
+			// 网页加载完成判断是否是微信浏览器
+			window.onload = function is_weixin() {
+				var ua = navigator.userAgent.toLowerCase();
+				var weixin = document.getElementById("weixin");
+				if (ua.match(/MicroMessenger/i) == "micromessenger") {
+
+					if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
+						weixin.innerHTML = "<div id=\"weixin-tip\"><p><img src=\"img/Ios.png\" alt=\"微信打开\"/></p></div>";
+					} else if (navigator.userAgent.match(/android/i)) {
+						weixin.innerHTML = "<div id=\"weixin-tip\"><p><img src=\"img/Android.png\" alt=\"微信打开\"/></p></div>";
+					} else {
+						weixin.innerHTML = "<div id=\"weixin-tip\"><p><img src=\"img/Android.png\" alt=\"微信打开\"/></p></div>";
+					}
+
+					//alert("微信浏览器");
+					//return true;
+
+				} else {
+					//alert("微信浏览器，请使用其他浏览器打开");
+					//alert("非微信浏览器");
+					//return false;
 
 
-      }
-    }
+				}
+
+			}
+
+			//判断安卓苹果分别打开应用和未安装应用进行下载跳转
+			function open_or_download_app() {
+				if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) { // 判断useragent，当前设备为ios设备
+					var loadDateTime = new Date(); // 设置时间阈值，在规定时间里面没有打开对应App的话，直接去App store进行下载。
+					window.setTimeout(function() {
+							var timeOutDateTime = new Date();
+							if (timeOutDateTime - loadDateTime < 5000) {
+								//var r = confirm("即将跳转到下载页面！");
+								// if (r == true) {
+								//点击确定
+								window.location.href = "https://fir.im/zbvq";
+								// } else {
+								//点击取消
+								// }
+
+							} else {
+								window.close();
+							}
+						},
+						25);
+					window.location = "com.applive.mosction://TimeDepot"; // ios端URL Schema
+				} else if (navigator.userAgent.match(/android/i)) {
+					var loadDateTime = new Date();　　　　　　　　　　　　 // 设置时间阈值，在规定时间里面没有打开对应App的话，直接去App store进行下载。
+					window.setTimeout(function() {
+							var timeOutDateTime = new Date();
+							if (timeOutDateTime - loadDateTime < 5000) {
+								// var r = confirm("即将跳转到下载页面！");
+								// if (r == true) {
+								//点击确定
+								window.location.href = "https://fir.im/s7av";
+								// } else {
+								//点击取消
+								// }
+
+							} else {
+								window.close();
+							}
+						},
+						25);　　　　　　　　　　　　 // 判断useragent，当前设备为安卓设备
+					　　　　　　　　　　　　
+					window.location = "com.weiku.time://timecapsule";　　 // Android端URL Schema
+					　　　　　　　　　
+				} else {
+					document.getElementById("weixin").innerHTML =
+						"<div id=\"weixin-tip\"><p>请使用手机下载App登陆<br><br><img src=\"img/DIos.png\"><br><a href=\"https://fir.im/zbvq\">Ios</a><br><br><img src=\"img/Dandroid.png\"><br><a href=\"https://fir.im/s7av\">Android</a></p></div>";
+					//window.location.href = "http://www.patimecapsule.com/";
+				}
+
+			}
 
 
-    function open_or_download_app() {
-      if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {　　　　　　　　　　　 // 判断useragent，当前设备为ios设备
-        var loadDateTime = new Date();　　　　　　　　　　　　 // 设置时间阈值，在规定时间里面没有打开对应App的话，直接去App store进行下载。
-        window.setTimeout(function() {
-            var timeOutDateTime = new Date();
-            if (timeOutDateTime - loadDateTime < 5000) {
-              var r = confirm("即将跳转到下载页面！");
-              if (r == true) {
-                //点击确定
-                window.location.href = "https://fir.im/zbvq";
-              } else {
-                //点击取消
-              }
+			//老方法判断是否是安卓苹果 暂时无用处
+			function jump() {
+				var u = navigator.userAgent;
+				var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android
+				var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios
+				if (isAndroid == 1) {
+					window.location.href = "timecapsule://open";
+				} else if (isiOS == 1) {
+					window.location.href = "ios.jsp";
+				} else {
 
-            } else {
-              window.close();
-            }
-          },
-          25);
-        window.location = "timecapsule://open";　　 // ios端URL Schema
-      } else if (navigator.userAgent.match(/android/i)) {
-        var loadDateTime = new Date();　　　　　　　　　　　　 // 设置时间阈值，在规定时间里面没有打开对应App的话，直接去App store进行下载。
-        window.setTimeout(function() {
-            var timeOutDateTime = new Date();
-            if (timeOutDateTime - loadDateTime < 5000) {
-              var r = confirm("即将跳转到下载页面！");
-              if (r == true) {
-                //点击确定
-                window.location.href = "https://fir.im/s7av";
-              } else {
-                //点击取消
-              }
+				}
+			}
+			/* alert('是否是Android：'+isAndroid);
+			alert('是否是iOS：'+isiOS); */
+			var InterValObj; //timer变量，控制时间
+			var count = 60; //间隔函数，1秒执行
+			var curCount; //当前剩余秒数
+			var result_code;
 
-            } else {
-              window.close();
-            }
-          },
-          25);　　　　　　　　　　　　 // 判断useragent，当前设备为安卓设备
-        　　　　　　　　　　　　
-        window.location = "timecapsule://open";　　 // Android端URL Schema
-        　　　　　　　　　
-      } else {
-        document.getElementById("weixin").innerHTML =
-          "<div id=\"weixin-tip\"><p>请使用手机下载App登陆<br><br><img src=\"img/DIos.png\"><br><a href=\"https://fir.im/zbvq\">Ios</a><br><br><img src=\"img/Dandroid.png\"><br><a href=\"https://fir.im/s7av\">Android</a></p></div>";
-        //window.location.href = "http://www.patimecapsule.com/";
-      }
+			//获取验证码按钮
+			function btn_code() {
+				var PhoneNumber = document.getElementById("PhoneNumber").value;
+				var error_code;
+				var msg;
 
-    }
+				curCount = count;
+				var btn_code = document.getElementById("btn_code");
+				if (judge1() != true) {
+					//  hint_time("手机号不能为空");
+					return false;
+				}
+				//禁用按钮
+				btn_code.disabled = true;
+				btn_code.innerHTML = (curCount + "\'");
 
+				/*  		$.ajax({
+							type : "post",
+							url : "sendCode.do",
+							//traditional:true,             //必须加！！！！！！需要这个值为true进行阻止深度序列化。
+							data : {
+								'user_tel': PhoneNumber,'code':'5'
+							},
+							async : false,
+							success : function(data) {
+								//alert(data);
+						          if(data.error_code == 0 && data.msg=="验证发送"){
 
+						        	  hint_time("验证码获取成功，请在60秒内完成注册");
+						        	  InterValObj = window.setInterval(SetRemainTime, 1000);
+						          }else{
+						        	  hint_time("获取验证码错误");
+						        	  InterValObj = window.setInterval(SetRemainTime, 1000);
+						          }
+						    	  	result_code=data.result.code; // John
+						    	  	error_code=data.error_code;
+						    	  	msg=data.msg;
+							}
+						}, "json");  */
 
-    function jump() {
-      var u = navigator.userAgent;
-      var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android
-      var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios
-      if (isAndroid == 1) {
-        window.location.href = "timecapsule://open";
-      } else if (isiOS == 1) {
-        window.location.href = "ios.jsp";
-      } else {
+				var code = $.post("sendCode.do", {
+						"user_tel": PhoneNumber,
+						"code": "1"
+					},
+					function(data) {
+						//alert(error_code);alert(result_code);
+						if (data.error_code == 0 && data.msg == "验证发送") {
 
-      }
-    }
-    /* alert('是否是Android：'+isAndroid);
-    alert('是否是iOS：'+isiOS); */
-    var InterValObj; //timer变量，控制时间
-    var count = 60; //间隔函数，1秒执行
-    var curCount; //当前剩余秒数
-
-
-    function btn_code() {
-      curCount = count;
-      var btn_code = document.getElementById("btn_code");
-      if (judge1() != true) {
-      //  hint_time("手机号不能为空");
-        return false;
-      }
-      //禁用按钮
-      btn_code.disabled = true;
-      btn_code.innerHTML = (curCount + "\'");
-      InterValObj = window.setInterval(SetRemainTime, 1000);
-
-    }
-
-
-    //timer处理函数
-    function SetRemainTime() {
-      var btn_code = document.getElementById("btn_code");
-      if (curCount == 0) {
-        window.clearInterval(InterValObj); //停止计时器
-        btn_code.innerHTML = ("<font size=\"1\">" + "重新发送" + "</font>");
-        //启用按钮
-        btn_code.disabled = false;
-      } else {
-        curCount--;
-        btn_code.innerHTML = (curCount + "\'");
-      }
-    }
-
-    function hint_time(hintinfo){
-
-      var hint = document.getElementById("hint");
-      hint.innerHTML = "<div class=\"hint\" ><font>"+hintinfo+"</font></div>";
-      setTimeout(function(){  //使用  setTimeout（）方法设定定时2000毫秒
-      hint.innerHTML = "";
-    },1500);
-    }
-
-    function judge() {
-      if (judge1() != true) {
-
-      } else if (judge2() != true) {
-
-      } else if (judge3() != true) {
-
-      } else if (judge4() != true) {
-
-      }
-    }
-
-    function judge1() {
-      var PhoneNumber = document.getElementById("PhoneNumber").value;
-      var PhoneNumberdiv = document.getElementById("PhoneNumberdiv");
-      var mobile = /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/;
-      //匹配数字
-      if (PhoneNumber == "") {
-        hint_time("手机号不能为空");
-        return false;
-      } else if (!mobile.test(PhoneNumber)) {
-        hint_time("请输入正确手机号格式");
-        return false;
-      } else {
-        //PhoneNumberdiv.innerHTML = "";
-        return true;
-      }
-    }
-
-    function judge2() {
-      var yanzheng = document.getElementById("yanzheng").value;
-      var yanzhengdiv = document.getElementById("yanzhengdiv");
-      //匹配数字
-      if (yanzheng == "") {
-        hint_time("验证码不能为空");
-        return false;
-      } else {
-        //yanzhengdiv.innerHTML = "";
-        return true;
-      }
-    }
-
-    function judge3() {
-      var password = document.getElementById("password").value;
-      var passworddiv = document.getElementById("passworddiv");
-      //正则（密码由6~20位字母数字组成）
-      var pass = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,20}$/;
-      //匹配数字
-      if (password == "") {
-        hint_time("密码不能为空");
-        return false;
-      } else if (!pass.test(password)) {
-        hint_time("密码由字母数字组合(6~20位)");
-        return false;
-      } else {
-      //  passworddiv.innerHTML = "";
-        return true;
-      }
-    }
-
-    function judge4() {
-      var password = document.getElementById("password").value;
-      var password1 = document.getElementById("password1").value;
-      var passworddiv1 = document.getElementById("passworddiv1");
-      //匹配数字
-      if (password1 == "") {
-        hint_time("密码不能为空");
-        return false;
-      } else if (password != password1) {
-        hint_time("两次输入密码不一致  请重新输入");
-        return false;
-      } else {
-      //  passworddiv1.innerHTML = "";
-        return true;
-      }
-    }
-  </script>
-
-</head>
-
-<body>
-  <div id="weixin"></div>
-
-  <div class="cont_centrar">
-    <div class="cont_login">
-      <div class="cont_forms"><div  id="hint" style="color:#ffffff"  ></div>
-        <div class="cont_form_sign_up">
-          <img class="img_logo" src="img/js.png" alt="" style="" />
-          <input type="text" id="PhoneNumber" name="PhoneNumber" placeholder="　手机号" onblur="judge1()" />
-          <hr>
-          <div id="PhoneNumberdiv" style="color:#BA9257"></div>
-          <div class="code">
-            <input type="text" placeholder="　验证码" id="yanzheng" name="yanzheng" onblur="judge2()" /><button class="btn_code" id="btn_code" onClick="btn_code()">获取验证码</button>
-          </div>
-          <hr>
-          <div id="yanzhengdiv" style="color:#BA9257"></div>
-          <input type="password" placeholder="　密码" id="password" name="password" onblur="judge3()" />
-          <hr>
-          <div id="passworddiv" style="color:#BA9257"></div>
-          <input type="password" placeholder="　确认密码" id="password1" name="password1" onblur="judge4()" />
-          <hr>
-          <div id="passworddiv1" style="color:#BA9257"></div>
-          <br>
-          <button class="btn_sign_up" onClick="judge()">注册</button>
-          <br>
-          <a onClick="open_or_download_app()">
-            <font size="1">已有账号 请立即登录</font>
-          </a>
-          <!-- <button class="btn_login" onClick="ocultar_login_sign_up()">返回</button> -->
-        </div>
-      </div>
-
-    </div>
-  </div>
+							hint_time("验证码获取成功，请在60秒内完成注册");
+							InterValObj = window.setInterval(SetRemainTime, 1000);
+						} else {
+							hint_time("获取验证码出错");
+							InterValObj = window.setInterval(SetRemainTime, 1000);
+						}
+						result_code = data.result.code; // John
+						error_code = data.error_code;
+						msg = data.msg;
+					}, "json");
 
 
 
-</body>
 
-</html>
+			}
+
+
+			//timer处理函数
+			function SetRemainTime() {
+				var btn_code = document.getElementById("btn_code");
+				if (curCount == 0) {
+					window.clearInterval(InterValObj); //停止计时器
+					btn_code.innerHTML = ("<font size=\"1\">" + "重新发送" + "</font>");
+					//启用按钮
+					btn_code.disabled = false;
+				} else {
+					curCount--;
+					btn_code.innerHTML = (curCount + "\'");
+				}
+			}
+
+			//提示信息
+			function hint_time(hintinfo) {
+
+				var hint = document.getElementById("hint");
+				hint.innerHTML = "<div class=\"hint\" ><font>" + hintinfo + "</font></div>";
+				setTimeout(function() { //使用  setTimeout（）方法设定定时2000毫秒
+					hint.innerHTML = "";
+				}, 1500);
+			}
+
+
+			//获取GET提交的值
+			function getvl(name) {
+
+				var reg = new RegExp("(^|\\?|&)" + name + "=([^&]*)(\\s|&|$)", "i");
+
+				if (reg.test(location.href))
+
+					return unescape(RegExp.$2.replace(/\+/g, " "));
+
+				return "";
+
+			};
+
+
+			function judge() {
+				var yanzheng = document.getElementById("yanzheng").value;
+				var PhoneNumber = document.getElementById("PhoneNumber").value;
+				var password = document.getElementById("logonPassword").value;
+				var id = getvl("id");
+				if (judge1() != true) {
+					return false;
+				} else if (judge2() != true) {
+					return false;
+				} else if (judge3() != true) {
+					return false;
+				} else if (judge4() != true) {
+					return false;
+				} else {
+					if (curCount <= 0) {
+						hint_time("验证码超时请重新获取");
+						return false;
+					} else if (yanzheng != result_code) {
+						hint_time("验证码错误");
+						return false;
+					} else {
+
+						$.ajax({
+							type: "post",
+							url: "register.do",
+							//traditional:true,             //必须加！！！！！！需要这个值为true进行阻止深度序列化。
+							data: {
+								"phoneNumber": PhoneNumber,
+								"logonPassword": password,
+								"phoneNumber1": id,
+								"userType": 1
+							},
+							async: false,
+							success: function(data) {
+								var obj = JSON.parse(data);
+								//alert(obj.error_code);
+								if (obj.error_code == 2) {
+
+									hint_time("您的手机号已注册请登陆");
+
+								} else if (obj.error_code == 3) {
+									hint_time("注册出错：code=3");
+
+								} else if (obj.error_code == 0) {
+									hint_time("注册成功");
+									if(confirm("注册成功，是否打开或下载应用？")) {
+					                    open_or_download_app();
+					            	}else{
+					            		window.location.href=location.href;
+					            	}
+								}
+
+							}
+						}, "json");
+
+					}
+				}
+
+			}
+
+
+
+			function judge1() {
+				var PhoneNumber = document.getElementById("PhoneNumber").value;
+				var mobile = /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/;
+				//匹配数字
+				if (PhoneNumber == "") {
+					hint_time("手机号不能为空");
+					return false;
+				} else if (!mobile.test(PhoneNumber)) {
+					hint_time("请输入正确手机号格式");
+					return false;
+				} else {
+					//PhoneNumberdiv.innerHTML = "";
+					return true;
+				}
+			}
+
+			function judge2() {
+				var yanzheng = document.getElementById("yanzheng").value;
+				//匹配数字
+				if (yanzheng == "") {
+					hint_time("验证码不能为空");
+					return false;
+				} else {
+					//yanzhengdiv.innerHTML = "";
+					return true;
+				}
+			}
+
+			function judge3() {
+				var password = document.getElementById("logonPassword").value;
+				//正则（密码由6~20位字母数字组成）
+				var pass = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,20}$/;
+				//匹配数字
+				if (password == "") {
+					hint_time("密码不能为空");
+					return false;
+				} else if (!pass.test(password)) {
+					hint_time("密码由字母数字组合(6~20位)");
+					return false;
+				} else {
+					//  passworddiv.innerHTML = "";
+					return true;
+				}
+			}
+
+			function judge4() {
+				var password = document.getElementById("logonPassword").value;
+				var password1 = document.getElementById("logonPassword1").value;
+				//匹配数字
+				if (password1 == "") {
+					hint_time("密码不能为空");
+					return false;
+				} else if (password != password1) {
+					hint_time("两次输入密码不一致  请重新输入");
+					return false;
+				} else {
+					//  passworddiv1.innerHTML = "";
+					return true;
+				}
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<div id="weixin"></div>
+
+		<div class="cont_centrar">
+			<div class="cont_login">
+				<div class="cont_forms">
+					<div id="hint" style="color: #ffffff"></div>
+					<div class="cont_form_sign_up">
+						<img class="img_logo" src="img/js.png" alt="" style="" /> <input id="promoCode" name="promoCode" type="hidden" value="" /> <input type="text" id="PhoneNumber" name="PhoneNumber" placeholder="　手机号" onblur="judge1()" />
+						<hr>
+						<div class="code">
+							<input type="text" placeholder="　验证码" id="yanzheng" name="yanzheng" onblur="judge2()" /><button class="btn_code" id="btn_code" onClick="btn_code()">获取验证码</button>
+						</div>
+						<hr>
+						<input type="password" placeholder="　密码" id="logonPassword" name="logonPassword" onblur="judge3()" />
+						<hr>
+						<input type="password" placeholder="　确认密码" id="logonPassword1" name="logonPassword1" onblur="judge4()" />
+						<hr>
+						<br>
+						<button class="btn_sign_up" onClick="judge()">注册</button>
+						<br>
+						<a onClick="open_or_download_app()">
+							<font size="1">已有账号 请立即登录</font>
+						</a>
+						<!-- <button class="btn_login" onClick="ocultar_login_sign_up()">返回</button> -->
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+
+
+	</body>
+
+	</html>
