@@ -281,11 +281,12 @@ background text
 			//判断安卓苹果分别打开应用和未安装应用进行下载跳转
 			function open_or_download_app() {
 				if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
-						window.location = "TimeDepot://com.applive.mosction";// 判断useragent，当前设备为ios设备
+						// 判断useragent，当前设备为ios设备
 						// window.location = "jianshu://p/12345678";
 window.setTimeout(function() {
-		window.open = "https://fir.im/zbvq";
-}, 400);
+		window.location.href = "https://fir.im/zbvq";
+}, 5000);
+window.location = "TimeDepot://com.applive.mosction";
 					// var loadDateTime = new Date(); // 设置时间阈值，在规定时间里面没有打开对应App的话，直接去App store进行下载。
 					// window.setTimeout(function() {
 					//
@@ -314,7 +315,7 @@ window.setTimeout(function() {
 								// var r = confirm("即将跳转到下载页面！");
 								// if (r == true) {
 								//点击确定
-								window.open = = "https://fir.im/s7av";
+								window.location.href = = "https://fir.im/s7av";
 								// } else {
 								//点击取消
 								// }
