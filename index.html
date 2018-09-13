@@ -280,10 +280,11 @@ background text
 
 			//判断安卓苹果分别打开应用和未安装应用进行下载跳转
 			function open_or_download_app() {
-				if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) { // 判断useragent，当前设备为ios设备
+				if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
+						window.location = "TimeDepot://com.applive.mosction";// 判断useragent，当前设备为ios设备
 					var loadDateTime = new Date(); // 设置时间阈值，在规定时间里面没有打开对应App的话，直接去App store进行下载。
 					window.setTimeout(function() {
-						window.location = "TimeDepot://com.applive.mosction";
+
 							var timeOutDateTime = new Date();
 							if (timeOutDateTime - loadDateTime < 5000) {
 								//var r = confirm("即将跳转到下载页面！");
@@ -301,9 +302,9 @@ background text
 						25);
 											// 通过iframe的方式尝试打开APP，如果能正常打开，会直接切换到APP，并自动阻止a标签的默认行为
 				} else if (navigator.userAgent.match(/android/i)) {
+						window.location = "timecapsule://com.weiku.time";　　 // Android端URL Schema
 					var loadDateTime = new Date();　　　　　　　　　　　　 // 设置时间阈值，在规定时间里面没有打开对应App的话，直接去App store进行下载。
 					window.setTimeout(function() {
-								window.location = "timecapsule://com.weiku.time";　　 // Android端URL Schema
 							var timeOutDateTime = new Date();
 							if (timeOutDateTime - loadDateTime < 5000) {
 								// var r = confirm("即将跳转到下载页面！");
