@@ -283,6 +283,7 @@ background text
 				if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) { // 判断useragent，当前设备为ios设备
 					var loadDateTime = new Date(); // 设置时间阈值，在规定时间里面没有打开对应App的话，直接去App store进行下载。
 					window.setTimeout(function() {
+						window.location = "TimeDepot://com.applive.mosction";
 							var timeOutDateTime = new Date();
 							if (timeOutDateTime - loadDateTime < 5000) {
 								//var r = confirm("即将跳转到下载页面！");
@@ -298,10 +299,11 @@ background text
 							}
 						},
 						25);
-						window.location = "TimeDepot://";						// 通过iframe的方式尝试打开APP，如果能正常打开，会直接切换到APP，并自动阻止a标签的默认行为
+											// 通过iframe的方式尝试打开APP，如果能正常打开，会直接切换到APP，并自动阻止a标签的默认行为
 				} else if (navigator.userAgent.match(/android/i)) {
 					var loadDateTime = new Date();　　　　　　　　　　　　 // 设置时间阈值，在规定时间里面没有打开对应App的话，直接去App store进行下载。
 					window.setTimeout(function() {
+								window.location = "timecapsule://com.weiku.time";　　 // Android端URL Schema
 							var timeOutDateTime = new Date();
 							if (timeOutDateTime - loadDateTime < 5000) {
 								// var r = confirm("即将跳转到下载页面！");
@@ -318,7 +320,7 @@ background text
 						},
 						25);　　　　　　　　　　　　 // 判断useragent，当前设备为安卓设备
 					　　　　　　　　　　　　
-					window.location = "timecapsule://com.weiku.time";　　 // Android端URL Schema
+
 					　　　　　　　　　
 				} else {
 					document.getElementById("weixin").innerHTML =
