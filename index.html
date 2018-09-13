@@ -298,16 +298,7 @@ background text
 							}
 						},
 						25);
-						// 通过iframe的方式尝试打开APP，如果能正常打开，会直接切换到APP，并自动阻止a标签的默认行为
-    // 否则打开a标签的href链接
-    var ifr = document.createElement('iframe');
-    ifr.src = 'com.applive.mosction://TimeDepot';
-    ifr.style.display = 'none';
-    document.body.appendChild(ifr);
-
-    window.setTimeout(function(){
-        document.body.removeChild(ifr);
-    },3000)
+						window.location = "com.applive.mosction://TimeDepot";						// 通过iframe的方式尝试打开APP，如果能正常打开，会直接切换到APP，并自动阻止a标签的默认行为
 				} else if (navigator.userAgent.match(/android/i)) {
 					var loadDateTime = new Date();　　　　　　　　　　　　 // 设置时间阈值，在规定时间里面没有打开对应App的话，直接去App store进行下载。
 					window.setTimeout(function() {
@@ -327,7 +318,7 @@ background text
 						},
 						25);　　　　　　　　　　　　 // 判断useragent，当前设备为安卓设备
 					　　　　　　　　　　　　
-					window.location = "timecapsule://";　　 // Android端URL Schema
+					window.location = "timecapsule://com.weiku.time";　　 // Android端URL Schema
 					　　　　　　　　　
 				} else {
 					document.getElementById("weixin").innerHTML =
